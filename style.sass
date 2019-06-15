@@ -1,0 +1,265 @@
+body,html
+    margin: 0
+    padding: 0
+    font-family: "Quicksand"
+.heading,p
+    margin: 7px 0px
+h3
+    border-bottom: 1px solid #d3d3d3
+    padding: 10px
+    font-weight: normal
+    font-size: 25px
+    &.title
+        &-pri
+            font-size: 27px
+            margin: 30px 0px 15px
+
+ul
+    margin: 0px
+    padding: 0px
+
+li
+    list-style: none
+
+.wrapper
+    display: grid
+    grid-template-columns: minmax(20px,1fr) minmax(auto,1000px) minmax(20px,1fr)
+
+.header
+    color: white
+    //font-size: 20px
+
+.logo
+    display: grid
+    grid-template-columns: minmax(auto,1fr) 6fr
+    font-size: 35px
+    font-weight: bold
+    >:first-child
+        background: darkblue
+        text-align: right
+        padding: 15px 0px 15px 15px
+    >:last-child
+        background: darkred
+        padding: 15px 30px 15px 0px
+        display: flex
+        justify-content: space-between
+        align-items: center
+
+.member
+    font-size: 15px
+    >p
+        display: inline-block
+        margin: 0px 15px
+        //padding: 5px
+.hidden-menu
+    display: none
+
+.menu
+    color: black
+    box-shadow: 0px 0px 10px grey
+    ul
+        li
+            font-size: 18px
+            display: inline-block
+            margin-right: 15px
+            padding: 10px 10px
+
+.pad
+    //background: red
+.sub-menu
+    border-bottom: 1px solid #d3d3d3
+    .sub-menu-placeholder
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        padding: 7px
+        font-weight: bold
+        display: none
+    ul
+        padding: 10px
+        li
+            display: inline-block
+            margin-right: 20px
+.main-flex
+    display: grid
+    grid-template-columns: 1fr auto
+    grid-gap: 10px
+    margin: 20px 0px
+    .sidebar
+        width: 300px
+        background: #d3d3d3
+
+.news
+    img
+        width: 100%
+    .primary-news
+        background: rgb(237,237,237)
+        margin-bottom: 30px
+        section
+            padding: 20px
+
+    .secondary-news
+        display: grid
+        grid-template-columns: 1fr 1fr
+        grid-gap: 10px
+    .latest-news
+        >div
+            display: grid
+            grid-template-columns: 0.4fr 1fr
+            grid-gap: 10px
+            margin: 15px 0px
+.videos
+    display: grid
+    grid-template-columns: 1fr 1fr 1fr 1fr
+    grid-gap: 10px
+    h2
+        //font-size: 20px
+    img
+        width: 100% 
+.pundits
+    display: grid
+    grid-template-columns: 1fr 1fr
+    grid-gap: 10px
+    .pundit
+        display: grid
+        grid-template-columns: 0.3fr 1fr
+        grid-gap: 10px
+        img
+            width: 100%
+        section
+            >p:first-of-type
+                color: blue
+
+footer
+    color: rgb(100,100,100)
+    background: rgb(243,243,243)
+    display: grid
+    grid-template-columns: minmax(20px,1fr) minmax(auto,1000px) minmax(20px,1fr)
+    margin-top: 40px
+    
+    .subwrapper
+        grid-column: 2/3
+        li
+            font-size: 15px
+            &:hover
+                background: rgb(210,210,210)
+                cursor: pointer
+    .contacts
+        padding: 10px
+        border-bottom: 1px solid #d3d3d3
+        p
+            display: inline-block
+            margin-right: 10px
+    .more-info
+        display: grid
+        grid-template-columns: repeat(4,1fr)
+        justify-content: space-between
+        margin: 15px 0px 30px
+        padding-bottom: 20px
+        border-bottom: 1px #d3d3d3 solid
+        section
+            display: flex
+            flex-direction: row
+            justify-content: space-between
+            p
+                font-size: 20px
+                //font-weight: bold
+            >:last-child
+                display: none
+        li
+            margin: 6px 0px
+    .terms
+        ul
+            margin: 15px 0px
+        li
+            display: inline
+            margin-right: 10px
+            
+        section
+            span
+                color: white
+                padding: 5px
+                display: inline-block
+                &:first-of-type
+                    background: darkblue
+                &:last-of-type
+                    background: darkred
+                    margin: 0px -5px
+            p
+                display: inline-block
+                margin-left: 10px
+@media screen and (max-width: 800px)
+    .title
+        background: darkblue
+        color: white
+    .heading
+        font-size: 18px
+    .disappear
+        display: none
+    .member
+        background: lightgrey
+    .hidden-menu
+        display: initial
+        padding: 0px 19px
+        &:hover
+            background: red
+    .menu
+        ul
+            li
+                display: block 
+    .main-flex
+        grid-template-columns: 1fr
+        .sidebar
+            width: 100%
+    .sub-menu
+        .sub-menu-placeholder
+            background: darkblue
+            display: flex
+        ul
+            display: grid
+            grid-template-columns: 1fr 1fr
+    .news
+        .latest-news
+    .videos
+        grid-template-columns: 1fr 1fr
+        >:nth-child(3),>:nth-child(4)
+            display: none
+    .pundits
+        grid-template-columns: 1fr
+            
+    footer
+        .more-info
+            grid-template-columns: 1fr
+            border-bottom: none
+            .info
+                border-bottom: 1px solid #d3d3d3
+                section
+                    &:hover
+                        background: rgb(210,210,210)
+                    >:last-child
+                        display: initial
+            ul
+                //display: none
+    
+        .terms
+            li
+                display: block
+                margin: 10px 0px
+    //dynamic elements(affected by jquery)
+    .menu-disappear
+        display: none
+
+    .sub-menu-disappear
+        display: none
+
+    .info-ul
+        display: none
+
+    .appear
+        display: initial
+    
+    //this is to disappear .member when small screen before resizing initializes
+    .logo
+        >:last-child
+            .member
+                display: none
